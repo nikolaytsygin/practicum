@@ -1,0 +1,34 @@
+class Human:
+    def __init__(self, name):
+        self.name = name
+    def answer_question(self, question):
+        print("Очень интересный вопрос! Не знаю.")
+
+class Student(Human):
+    def ask_question(self, someone, question):
+        print(f'{someone.name}, {question}')
+        someone.answer_question(question)
+        print()
+
+class Curator(Human):
+    def answer_question(self, question):
+        if question == 'мне грустненько, что делать?':
+            print("Держись, всё получится. Хочешь видео с котиками?")
+        else:
+            super().answer_question(question)
+
+class CodeReviewer(Human):
+    def answer_question(self, question):
+        if question == 'что не так с моим проектом?':
+            print('О, вопрос про проект, это я люблю.')
+        else:
+            super().answer_question(question)
+
+class Mentor(Human):
+    def answer_question(self, question):
+        if question == 'мне грустненько, что делать?':
+            print("Отдохни и возвращайся с вопросами по теории.")
+        elif question == 'как устроиться работать питонистом?':
+            print('Сейчас расскажу.')
+        else:
+            super().answer_question(question)
